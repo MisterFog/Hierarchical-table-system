@@ -1,5 +1,5 @@
-import { mockCategories } from '../utils/mockData';
 import { Category } from '../models/category';
+import { mockCategories } from '../utils/mockData';
 
 export const fetchCategories = (): Promise<Category[]> =>
   new Promise((resolve) => {

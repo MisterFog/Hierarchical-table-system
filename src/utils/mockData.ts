@@ -7,7 +7,7 @@ const getRandomNumberInRange = (min: number, max: number): number =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 const generateCategories = () => {
-  for (let i = 1; i <= 500; i++) {
+  for (let i = 1; i <= 5000; i++) {
     const subCategories = [];
 
     for (let j = 1; j <= getRandomNumberInRange(10, 30); j++) {

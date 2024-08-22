@@ -5,6 +5,7 @@ import { Button, Form, Input, InputNumber, Popconfirm, Table, Typography } from 
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import { Category, NestedSubCategory, SubCategory } from '../models/category';
 import categoryStore from '../stores/categoryStore';
+import ExportButtons from './ExportButtons';
 
 type Item = SubCategory | Category | NestedSubCategory;
 
@@ -296,9 +297,12 @@ const CrudTable: React.FC<CrudTableProps> = observer(
 
     return (
       <div>
-        <Button onClick={handleAdd} type="primary" style={{ marginBottom: 16 }}>
-          Add a row
-        </Button>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <Button onClick={handleAdd} type="primary" style={{ marginBottom: 16 }}>
+            Add a row
+          </Button>
+          <ExportButtons categories={categories} />
+        </div>
         <Form form={form} component={false}>
           <Table
             components={{
