@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Spin } from 'antd';
+import categoryStore from './stores/categoryStore';
+import Router from './Router';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    categoryStore.loadCategories();
+  }, []);
+
+  if (categoryStore.loading) {
+    return (
+      <div className="spin">
+        <Spin size="large" />
+      </div>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 }
 
