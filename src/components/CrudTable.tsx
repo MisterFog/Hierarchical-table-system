@@ -6,6 +6,7 @@ import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import { Category, NestedSubCategory, SubCategory } from '../models/category';
 import categoryStore from '../stores/categoryStore';
 import ExportButtons from './ExportButtons';
+import Search from './Search';
 
 type Item = SubCategory | Category | NestedSubCategory;
 
@@ -146,7 +147,7 @@ const CrudTable: React.FC<CrudTableProps> = observer(
                   cancel();
                 }}
               >
-                <a>Cancel</a>
+                <a onClick={(e) => e.stopPropagation()}>Cancel</a>
               </Popconfirm>
             </span>
           ) : (
@@ -167,7 +168,9 @@ const CrudTable: React.FC<CrudTableProps> = observer(
                   handleDelete(record.id);
                 }}
               >
-                <a style={{ marginLeft: 8 }}>Delete</a>
+                <a onClick={(e) => e.stopPropagation()} style={{ marginLeft: 8 }}>
+                  Delete
+                </a>
               </Popconfirm>
             </span>
           );
@@ -297,11 +300,12 @@ const CrudTable: React.FC<CrudTableProps> = observer(
 
     return (
       <div>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={handleAdd} type="primary" style={{ marginBottom: 16 }}>
+        <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+          <Button onClick={handleAdd} type="primary">
             Add a row
           </Button>
           <ExportButtons categories={categories} />
+          {itemType === 'category' && <Search />}
         </div>
         <Form form={form} component={false}>
           <Table
