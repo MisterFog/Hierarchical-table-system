@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+## "Hierarchical Tables Test"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Это проект для демонстрации и работы с иерархическими таблицами. Этот проект использует React и Ant Design для создания современного пользовательского интерфейса.
 
-## Available Scripts
+## Установка
 
-In the project directory, you can run:
+1. Клонируйте репозиторий:
 
-### `npm start`
+```
+git clone https://github.com/ваш-репозиторий/hierarchical-tables-test.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Перейдите в директорию проекта:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ```
+   cd hierarchical-tables-test
+   ```
 
-### `npm test`
+3. Установите зависимости:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   npm install
+   ```
 
-### `npm run build`
+## Запуск проекта
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Чтобы запустить проект в режиме разработки, выполните:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Этот скрипт запускает проект на [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## Создание сборки
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Для создания оптимизированной сборки проекта выполните:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Сборка будет размещена в папке `build`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Линтинг и форматирование
 
-## Learn More
+- Для запуска линтинга используйте:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```bash
+  npm run lint
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Для автоматического исправления ошибок линтинга и форматирования используйте:
+
+  ```bash
+  npm run lint-fix
+  ```
+
+- Для форматирования кода используйте:
+
+  ```bash
+  npm run prettier
+  ```
+
+## Зависимости
+
+Проект использует следующие основные зависимости:
+
+- `react` и `react-dom` для создания пользовательского интерфейса.
+- `antd` для компонентного библиотеки Ant Design.
+- `mobx` и `mobx-react-lite` для управления состоянием.
+- `react-router-dom` для маршрутизации.
+- `typescript` для строгой типизации.
+- `xlsx` для работы с Excel файлами.
+
+## Скрипты
+
+- `start` - запускает проект в режиме разработки.
+- `build` - создает оптимизированную сборку проекта.
+- `eject` - извлекает конфигурацию проекта для дополнительных настроек.
+- `prettier` - форматирует код с использованием Prettier.
+- `lint` - запускает линтинг кода.
+- `lint-fix` - исправляет ошибки линтинга и форматирования кода.
+
+## Лицензия
+
+Этот проект лицензирован под [MIT License](LICENSE).
